@@ -1,5 +1,6 @@
 const Koa = require('koa')
 const app = new Koa()
+const cors = require('@koa/cors')
 const views = require('koa-views')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
@@ -17,6 +18,7 @@ onerror(app)
 
 // middlewares
 app.use(bodyparser())
+app.use(cors())
 app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/public'))
