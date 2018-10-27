@@ -9,7 +9,8 @@ const logger = require('koa-logger')
 const mongoose = require('mongoose')
 
 const index = require('./routes/index')
-const users = require('./routes/listings')
+const listings = require('./routes/listings')
+const purchases = require('./routes/purchases')
 
 mongoose.connect('mongodb://127.0.0.1:27017/radicalbodies', { useNewUrlParser: true })
 
@@ -37,7 +38,8 @@ app.use(async (ctx, next) => {
 
 // routes
 app.use(index.routes(), index.allowedMethods())
-app.use(users.routes(), users.allowedMethods())
+app.use(listings.routes(), listings.allowedMethods())
+app.use(purchases.routes(), purchases.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
