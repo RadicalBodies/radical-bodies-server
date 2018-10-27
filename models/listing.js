@@ -6,6 +6,8 @@ const ListingSchema = new mongoose.Schema(
       email: String,
       phone: String,
       tokenId: String,
+      description: String,
+      price: Number,
     },
     { timestamps: true },
 )
