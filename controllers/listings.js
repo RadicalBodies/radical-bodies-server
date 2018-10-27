@@ -6,12 +6,20 @@ async function findAll (ctx) {
 }
 
 async function create (ctx) {
+  console.log('Creating new listing with data:', ctx.request.body)
   const newData = new Listing(ctx.request.body)
+  console.log('Created listing:', newData)
   const savedData = await newData.save()
   ctx.body = savedData
 }
 
+async function update (ctx) { }
+
+async function destroy (ctx) { }
+
 module.exports = {
   findAll,
   create,
+  update,
+  destroy,
 }
