@@ -8,7 +8,7 @@ const logger = require('koa-logger')
 const mongoose = require('mongoose')
 
 const index = require('./routes/index')
-const users = require('./routes/users')
+const users = require('./routes/listings')
 
 mongoose.connect('mongodb://127.0.0.1:27017/radicalbodies', { useNewUrlParser: true })
 
